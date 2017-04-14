@@ -1,0 +1,55 @@
+Course Project: Shiny Application and Reproducible Pitch
+========================================================
+author: ARisal
+date: 4/14/2017
+
+
+Overview
+========================================================
+
+
+The app developed for the first part of the assignment demo is avalilable at:
+
+
+Source code for ui.R and server.R files are available on the GitHub repo:
+
+
+
+Web Application functionality
+========================================================
+
+The sites is providing a tools for to select the best car for your trip.
+
+We required you provide your trip detail like distance of your trip and the price od gasoline in your region, it's needed to calculate the Gasoline Expenditure for each car. Next with provide your budget on gasoline, so we can filtered and show the car with has Miles per Gallon(MPG) that below your budget.
+
+Second, you can choose your desire cars characteristic in term of : Cylinders, Displacement, Horse Power and Transmission. 
+
+The result contains filters selected cars will show in a table on the main content with using the mtcars dataset from [R].
+
+MTCARS Dataset
+========================================================
+
+The data used in the app comes from the Motor Trend Car Road Tests (mtcars) dataset. Let has a look on the mtcars's summary
+```{r, echo=FALSE}
+summary(mtcars)
+```
+
+
+Plot
+========================================================
+
+The relationship between miles per gallon (mpg) and displacement (disp) in the mtcars dataset.
+
+```{r, echo=FALSE}
+library(car)
+scatterplot.matrix(~mpg+disp, data=mtcars, cex.axis=1.5)
+
+fit <- lm(mpg~., data=mtcars)
+summary(fit)  
+summary(fit)$adj.r.squared
+```
+
+Summary
+========================================================
+
+As the summary result and R Square result suggests, the Residual standard error is 2.65 on 21 degrees of freedom. And the Adjusted R-squared value is 0.8066, which means that the model can explain about 81% of the variance of the MPG variables. 
